@@ -1,5 +1,6 @@
 package com.nimtego.morse.impl;
 
+import com.nimtego.morse.api.WordConversion;
 import org.junit.Test;
 
 import static org.junit.Assert.*;
@@ -12,6 +13,11 @@ import static org.junit.Assert.*;
 public class ExampleUnitTest {
     @Test
     public void addition_isCorrect() {
-        assertEquals(4, 2 + 2);
+        WordConversion conversion = new RussianWordConversion();
+        byte[] писка = conversion.convert("Писка");
+        for (int i = 0; i < писка.length; i++) {
+            byte b = писка[i];
+            System.out.print(b);
+        }
     }
 }

@@ -1,4 +1,4 @@
-package com.nimtego.morse.impl;
+package com.nimtego.morse.impl.alphabet;
 
 import org.junit.Assert;
 import org.junit.BeforeClass;

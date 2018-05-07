@@ -1,4 +1,4 @@
-package com.nimtego.morse.impl;
+package com.nimtego.morse.impl.alphabet;
 
 import java.io.IOException;
 import java.io.InputStream;
@@ -21,7 +21,11 @@ public class AlphabetImpl implements Alphabet {
 
     @Override
     public String toMorse(Character c) {
-        return alphabet.getProperty(String.valueOf(c).toUpperCase());
+        return alphabet.getProperty(getInRightCase(c));
+    }
+
+    protected String getInRightCase(Character c) {
+        return String.valueOf(c);
     }
 
     @Override

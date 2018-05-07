@@ -1,4 +1,4 @@
-package com.nimtego.morse.impl;
+package com.nimtego.morse.impl.alphabet;
 
 /**
  * Created by Pavel Gavrilov
