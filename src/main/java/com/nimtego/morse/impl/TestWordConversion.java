@@ -1,4 +1,6 @@
-package com.nimtego.morse.model;
+package com.nimtego.morse.impl;
+
+import com.nimtego.morse.api.WordConversion;
 
 public class TestWordConversion implements WordConversion {
 
