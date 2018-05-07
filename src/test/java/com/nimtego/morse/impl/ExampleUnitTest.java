@@ -1,4 +1,4 @@
-package com.nimtego.morse;
+package com.nimtego.morse.impl;
 
 import org.junit.Test;
 
