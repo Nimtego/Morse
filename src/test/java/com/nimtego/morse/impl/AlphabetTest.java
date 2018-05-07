@@ -19,18 +19,20 @@ public class AlphabetTest extends Assert {
     public void presentLetterIsNotNullTest() {
         String a = alphabet.toMorse('A');
         assertNotNull(a);
+        assertEquals("...", a);
     }
 
     @Test
     public void absentLetterIsNullTest() {
         String z = alphabet.toMorse('Z');
-        assertNotNull(z);
+        assertNull(z);
     }
 
     @Test
     public void presentMorseIsNotNullTest() {
         Character character = alphabet.fromMorse("...");
         assertNotNull(character);
+        assertEquals(String.valueOf('A'), String .valueOf(character));
     }
 
     @Test

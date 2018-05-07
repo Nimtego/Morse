@@ -1,6 +1,7 @@
 package com.nimtego.morse.impl;
 
 import java.io.IOException;
+import java.io.InputStream;
 import java.util.Properties;
 
 /**
@@ -11,7 +12,8 @@ public class AlphabetImpl implements Alphabet {
 
     public AlphabetImpl(String properties) {
         try {
-            alphabet.load(getClass().getResourceAsStream(properties));
+            InputStream stream = getClass().getClassLoader().getResourceAsStream(properties);
+            alphabet.load(stream);
         } catch (IOException e) {
             throw new RuntimeException(e);
         }
@@ -26,7 +28,8 @@ public class AlphabetImpl implements Alphabet {
     public Character fromMorse(String s) {
         return alphabet.entrySet().stream()
                 .filter(entry -> entry.getValue().equals(s.trim()))
-                .map(e -> (Character) e.getKey())
+                .map(e -> (String)e.getKey())
+                .map(st -> st.charAt(0))
                 .findFirst()
                 .orElse(null);
     }
