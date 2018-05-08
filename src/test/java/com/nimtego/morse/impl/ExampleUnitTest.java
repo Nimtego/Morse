@@ -11,7 +11,7 @@ import org.junit.Test;
 public class ExampleUnitTest {
     @Test
     public void addition_isCorrect() {
-        WordConversion conversion = new RussianWordConversion();
+        WordConversion conversion = new RussianNoStreamWordConversion();
         byte[] писка = conversion.convert("Писка");
         for (int i = 0; i < писка.length; i++) {
             byte b = писка[i];

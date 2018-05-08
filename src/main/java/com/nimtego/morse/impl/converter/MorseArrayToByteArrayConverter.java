@@ -7,7 +7,7 @@ import java.util.List;
 /**
  * Created by Pavel Gavrilov
  */
-public class MorseArrayToByteArrayConverter implements UnitConverter<byte[], String[]> {
+public abstract class MorseArrayToByteArrayConverter implements UnitConverter<byte[], String[]> {
     @Override
     public byte[] from(String[] smth) {
         List<Byte> bytes = new LinkedList<>();
@@ -43,12 +43,7 @@ public class MorseArrayToByteArrayConverter implements UnitConverter<byte[], Str
         return converted.split("  ");
     }
 
-    protected Byte[] stringToBytes(String s) {
-        String[] strings = s.split("");
-        return Arrays.stream(strings)
-                .map(this::symbolToByte)
-                .toArray(Byte[]::new);
-    }
+    protected abstract Byte[] stringToBytes(String s);
 
     protected Byte symbolToByte(String symbol) {
         switch (symbol) {
@@ -63,10 +58,5 @@ public class MorseArrayToByteArrayConverter implements UnitConverter<byte[], Str
         }
     }
 
-    protected String bytesToString(Byte[] bytes) {
-        return Arrays.stream(bytes)
-                .map(String::valueOf)
-                .collect(StringBuilder::new, StringBuilder::append, StringBuilder::append)
-                .toString();
-    }
+    protected abstract String bytesToString(Byte[] bytes);
 }
