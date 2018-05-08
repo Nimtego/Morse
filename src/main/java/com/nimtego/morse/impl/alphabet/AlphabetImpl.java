@@ -8,7 +8,7 @@ import java.util.Properties;
  * Created by Pavel Gavrilov
  */
 public class AlphabetImpl implements Alphabet {
-    private Properties alphabet = new Properties();
+    protected Properties alphabet = new Properties();
 
     public AlphabetImpl(String properties) {
         try {

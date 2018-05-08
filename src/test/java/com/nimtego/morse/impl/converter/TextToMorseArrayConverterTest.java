@@ -1,12 +1,11 @@
 package com.nimtego.morse.impl.converter;
 
-import com.nimtego.morse.impl.alphabet.AlphabetImpl;
-import com.nimtego.morse.impl.converter.TextToMorseArrayConverter;
-import com.nimtego.morse.impl.converter.UnitConverter;
+import com.nimtego.morse.impl.alphabet.AlphabetNoStream;
 import org.junit.BeforeClass;
 import org.junit.Test;
 
-import static org.junit.Assert.*;
+import static org.junit.Assert.assertEquals;
+import static org.junit.Assert.fail;
 
 /**
  * Created by Pavel Gavrilov
@@ -16,7 +15,7 @@ public class TextToMorseArrayConverterTest {
 
     @BeforeClass
     public static void init() {
-        morseConverter = new TextToMorseArrayConverter(new AlphabetImpl("test.alphabet.properties"));
+        morseConverter = new TextToMorseArrayNoStreamConverter(new AlphabetNoStream("test.alphabet.properties"));
     }
 
     @Test

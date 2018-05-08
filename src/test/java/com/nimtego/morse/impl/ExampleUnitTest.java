@@ -3,8 +3,6 @@ package com.nimtego.morse.impl;
 import com.nimtego.morse.api.WordConversion;
 import org.junit.Test;
 
-import static org.junit.Assert.*;
-
 /**
  * Example local unit test, which will execute on the development machine (host).
  *
