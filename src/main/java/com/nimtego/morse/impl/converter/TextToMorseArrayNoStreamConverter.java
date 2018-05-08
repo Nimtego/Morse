@@ -47,10 +47,12 @@ public class TextToMorseArrayNoStreamConverter implements UnitConverter<String[]
         String[] strings = text.split("");
         StringBuilder stringBuilder = new StringBuilder();
         for (String s : strings) {
-            String ch = alphabet.toMorse(s.charAt(0));
-            stringBuilder
-                    .append(ch)
-                    .append(" ");
+            if (!s.isEmpty()) {
+                String ch = alphabet.toMorse(s.charAt(0));
+                stringBuilder
+                        .append(ch)
+                        .append(" ");
+            }
         }
         return stringBuilder.toString().trim();
     }
