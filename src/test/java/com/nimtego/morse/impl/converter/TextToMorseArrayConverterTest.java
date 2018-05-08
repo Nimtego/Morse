@@ -1,13 +1,11 @@
 package com.nimtego.morse.impl.converter;
 
-import com.nimtego.morse.impl.alphabet.AlphabetImpl;
 import com.nimtego.morse.impl.alphabet.AlphabetNoStream;
-import com.nimtego.morse.impl.converter.TextToMorseArrayConverter;
-import com.nimtego.morse.impl.converter.UnitConverter;
 import org.junit.BeforeClass;
 import org.junit.Test;
 
-import static org.junit.Assert.*;
+import static org.junit.Assert.assertEquals;
+import static org.junit.Assert.fail;
 
 /**
  * Created by Pavel Gavrilov
