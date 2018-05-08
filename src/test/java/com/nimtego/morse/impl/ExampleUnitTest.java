@@ -12,7 +12,7 @@ public class ExampleUnitTest {
     @Test
     public void addition_isCorrect() {
         WordConversion conversion = new RussianNoStreamWordConversion();
-        byte[] писка = conversion.convert("Писка");
+        byte[] писка = conversion.convert(" ");
         for (int i = 0; i < писка.length; i++) {
             byte b = писка[i];
             System.out.print(b);

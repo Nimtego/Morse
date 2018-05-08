@@ -5,7 +5,7 @@ import com.nimtego.morse.impl.alphabet.NoStreamAlphabet;
 /**
  * Created by Pavel Gavrilov
  */
-public class TextToMorseArrayNoStreamConverter implements UnitConverter<String[], String > {
+public class TextToMorseArrayNoStreamConverter implements UnitConverter<String[], String> {
     private NoStreamAlphabet alphabet;
 
     public TextToMorseArrayNoStreamConverter(NoStreamAlphabet alphabet) {
@@ -49,9 +49,10 @@ public class TextToMorseArrayNoStreamConverter implements UnitConverter<String[]
         for (String s : strings) {
             if (!s.isEmpty()) {
                 String ch = alphabet.toMorse(s.charAt(0));
-                stringBuilder
-                        .append(ch)
-                        .append(" ");
+                if (ch != null)
+                    stringBuilder
+                            .append(ch)
+                            .append(" ");
             }
         }
         return stringBuilder.toString().trim();
