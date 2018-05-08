@@ -14,7 +14,7 @@ public class MorseArrayToByteArrayConverterTest {
 
     @BeforeClass
     public static void init() {
-        converter = new MorseArrayToByteArrayConverter();
+        converter = new MorseArrayToByteArrayNoStreamConverter();
     }
 
     @Test

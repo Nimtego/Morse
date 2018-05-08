@@ -1,6 +1,7 @@
 package com.nimtego.morse.impl.converter;
 
 import com.nimtego.morse.impl.alphabet.AlphabetImpl;
+import com.nimtego.morse.impl.alphabet.AlphabetNoStream;
 import com.nimtego.morse.impl.converter.TextToMorseArrayConverter;
 import com.nimtego.morse.impl.converter.UnitConverter;
 import org.junit.BeforeClass;
@@ -16,7 +17,7 @@ public class TextToMorseArrayConverterTest {
 
     @BeforeClass
     public static void init() {
-        morseConverter = new TextToMorseArrayConverter(new AlphabetImpl("test.alphabet.properties"));
+        morseConverter = new TextToMorseArrayNoStreamConverter(new AlphabetNoStream("test.alphabet.properties"));
     }
 
     @Test

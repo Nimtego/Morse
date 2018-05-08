@@ -43,14 +43,14 @@ public class MorseArrayToByteArrayConverter implements UnitConverter<byte[], Str
         return converted.split("  ");
     }
 
-    private Byte[] stringToBytes(String s) {
+    protected Byte[] stringToBytes(String s) {
         String[] strings = s.split("");
         return Arrays.stream(strings)
                 .map(this::symbolToByte)
                 .toArray(Byte[]::new);
     }
 
-    private Byte symbolToByte(String symbol) {
+    protected Byte symbolToByte(String symbol) {
         switch (symbol) {
             case ".":
                 return (byte) 1;
@@ -63,7 +63,7 @@ public class MorseArrayToByteArrayConverter implements UnitConverter<byte[], Str
         }
     }
 
-    private String bytesToString(Byte[] bytes) {
+    protected String bytesToString(Byte[] bytes) {
         return Arrays.stream(bytes)
                 .map(String::valueOf)
                 .collect(StringBuilder::new, StringBuilder::append, StringBuilder::append)
