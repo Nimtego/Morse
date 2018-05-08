@@ -9,11 +9,11 @@ import static org.junit.Assert.*;
  * Created by Pavel Gavrilov
  */
 public class RussianAlphabetTest {
-    private static RussianAlphabet alphabet;
+    private static RussianAlphabetNoStream alphabet;
 
     @BeforeClass
     public static void init() {
-        alphabet = new RussianAlphabet();
+        alphabet = new RussianAlphabetNoStream();
     }
 
     @Test

@@ -3,8 +3,8 @@ package com.nimtego.morse.impl.alphabet;
 /**
  * Created by Pavel Gavrilov
  */
-public class EnglishAlphabet extends AlphabetImpl {
-    public EnglishAlphabet() {
+public class EnglishAlphabetNoStream extends AlphabetNoStream{
+    public EnglishAlphabetNoStream() {
         super("english.morse.properties");
     }
 

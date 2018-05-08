@@ -8,11 +8,11 @@ import org.junit.Test;
  * Created by Pavel Gavrilov
  */
 public class AlphabetTest extends Assert {
-    private static AlphabetImpl alphabet;
+    private static AlphabetNoStream alphabet;
 
     @BeforeClass
     public static void init() {
-        alphabet= new AlphabetImpl("test.alphabet.properties");
+        alphabet= new AlphabetNoStream("test.alphabet.properties");
     }
 
     @Test

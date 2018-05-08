@@ -7,12 +7,18 @@ import java.util.List;
 /**
  * Created by Pavel Gavrilov
  */
-public class MorseArrayToByteArrayConverter implements UnitConverter<byte[], String[]> {
+public abstract class MorseArrayToByteArrayConverter implements UnitConverter<byte[], String[]> {
     @Override
     public byte[] from(String[] smth) {
+        if (smth.length == 0) {
+            byte[] res = {3,3};
+            return res;
+        }
         List<Byte> bytes = new LinkedList<>();
         for (int i = 0; i < smth.length - 1; i++) {
             String s = smth[i];
+            if (s.isEmpty())
+                continue;
             Byte[] word = stringToBytes(s);
             bytes.addAll(Arrays.asList(word));
             bytes.add((byte) 3);
@@ -24,7 +30,8 @@ public class MorseArrayToByteArrayConverter implements UnitConverter<byte[], Str
         Byte[] boxed = bytes.toArray(new Byte[0]);
         byte[] unboxed = new byte[boxed.length];
         for (int i = 0; i < boxed.length; i++) {
-            unboxed[i] = boxed[i];
+            Byte aByte = boxed[i];
+            unboxed[i] = aByte;
         }
         return unboxed;
     }
@@ -43,14 +50,9 @@ public class MorseArrayToByteArrayConverter implements UnitConverter<byte[], Str
         return converted.split("  ");
     }
 
-    private Byte[] stringToBytes(String s) {
-        String[] strings = s.split("");
-        return Arrays.stream(strings)
-                .map(this::symbolToByte)
-                .toArray(Byte[]::new);
-    }
+    protected abstract Byte[] stringToBytes(String s);
 
-    private Byte symbolToByte(String symbol) {
+    protected Byte symbolToByte(String symbol) {
         switch (symbol) {
             case ".":
                 return (byte) 1;
@@ -63,10 +65,5 @@ public class MorseArrayToByteArrayConverter implements UnitConverter<byte[], Str
         }
     }
 
-    private String bytesToString(Byte[] bytes) {
-        return Arrays.stream(bytes)
-                .map(String::valueOf)
-                .collect(StringBuilder::new, StringBuilder::append, StringBuilder::append)
-                .toString();
-    }
+    protected abstract String bytesToString(Byte[] bytes);
 }

@@ -3,8 +3,8 @@ package com.nimtego.morse.impl.alphabet;
 /**
  * Created by Pavel Gavrilov
  */
-public class RussianAlphabet extends AlphabetImpl {
-    public RussianAlphabet() {
+public class RussianAlphabetNoStream extends AlphabetNoStream {
+    public RussianAlphabetNoStream() {
         super("russian.morse.properties");
     }
 

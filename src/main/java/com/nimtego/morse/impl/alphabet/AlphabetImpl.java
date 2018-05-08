@@ -7,8 +7,8 @@ import java.util.Properties;
 /**
  * Created by Pavel Gavrilov
  */
-public class AlphabetImpl implements Alphabet {
-    private Properties alphabet = new Properties();
+public abstract class AlphabetImpl implements Alphabet {
+    protected Properties alphabet = new Properties();
 
     public AlphabetImpl(String properties) {
         try {
@@ -29,12 +29,5 @@ public class AlphabetImpl implements Alphabet {
     }
 
     @Override
-    public Character fromMorse(String s) {
-        return alphabet.entrySet().stream()
-                .filter(entry -> entry.getValue().equals(s.trim()))
-                .map(e -> (String)e.getKey())
-                .map(st -> st.charAt(0))
-                .findFirst()
-                .orElse(null);
-    }
+    public abstract Character fromMorse(String s);
 }

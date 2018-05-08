@@ -3,8 +3,6 @@ package com.nimtego.morse.impl;
 import com.nimtego.morse.api.WordConversion;
 import org.junit.Test;
 
-import static org.junit.Assert.*;
-
 /**
  * Example local unit test, which will execute on the development machine (host).
  *
@@ -13,8 +11,8 @@ import static org.junit.Assert.*;
 public class ExampleUnitTest {
     @Test
     public void addition_isCorrect() {
-        WordConversion conversion = new RussianWordConversion();
-        byte[] писка = conversion.convert("Писка");
+        WordConversion conversion = new RussianNoStreamWordConversion();
+        byte[] писка = conversion.convert(" ");
         for (int i = 0; i < писка.length; i++) {
             byte b = писка[i];
             System.out.print(b);
