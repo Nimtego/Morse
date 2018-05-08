@@ -2,6 +2,7 @@ package com.nimtego.morse.impl;
 
 import com.nimtego.morse.api.WordConversion;
 import com.nimtego.morse.impl.converter.MorseArrayToByteArrayConverter;
+import com.nimtego.morse.impl.converter.MorseArrayToByteArrayNoStreamConverter;
 import com.nimtego.morse.impl.converter.UnitConverter;
 
 /**
@@ -11,7 +12,7 @@ public abstract class AbstractWordConversion implements WordConversion {
     private UnitConverter<byte[], String[] > morseArrayToByteArrayConverter;
 
     public AbstractWordConversion() {
-        morseArrayToByteArrayConverter = new MorseArrayToByteArrayConverter();
+        morseArrayToByteArrayConverter = new MorseArrayToByteArrayNoStreamConverter();
     }
 
     @Override
